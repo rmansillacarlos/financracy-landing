@@ -18,7 +18,7 @@ export function Navbar() {
 
   const { scrollY } = useScroll()
 
-  const blurClasses = 'backdrop-blur-xl bg-neutral-900/80 shadow-2xl shadow-neutral-900/40 duration-300 transition-all ease-in-out !mt-0'
+  const blurClasses = 'backdrop-blur-xl bg-white/70 shadow-xl shadow-black-200/30 duration-300 transition-all ease-in-out !mt-0'
   const containerLgClasses = 'mb-2 md:mt-2'
   const navLgClasses = 'md:max-w-6xl'
 
@@ -87,7 +87,7 @@ export function Navbar() {
               )) }
             </ul>
             <Link href="" target="_blank" className="hidden md:block">
-              <Button variant="secondary" size="sm">
+              <Button size="sm">
                 Acceder
               </Button>
             </Link>

@@ -3,7 +3,7 @@ import Icon from "@/components/ui/Icon"
 import { MouseEventHandler } from "react"
 
 type ButtonVariant = 'primary' | 'secondary' | 'alpha'
-type ButtonSize = 'sm' | 'md' | 'xl'
+type ButtonSize = 'sm' | 'md' | 'lg'
 
 interface Props {
   variant?: ButtonVariant
@@ -16,31 +16,31 @@ interface Props {
 }
 
 export default function Button({ variant = 'primary', size = 'md', icon, className, children, ariaLabel, onClick }: Props) {
-  const baseClasses = 'flex items-center gap-1.5 leading-5 rounded-lg cursor-pointer'
+  const baseClasses = 'flex items-center gap-1 leading-5 rounded-lg cursor-pointer'
   const variantClasses = {
-    primary: 'bg-indigo-600 text-white outline outline-indigo-500/90 hover:bg-indigo-500',
-    secondary: 'bg-neutral-700/50 text-white outline outline-neutral-700/90 hover:bg-neutral-700',
-    alpha: 'hover:bg-neutral-700/50'
+    primary: 'bg-primary-500 text-white hover:bg-primary-500/70',
+    secondary: 'bg-secondary-500 text-white hover:bg-secondary-500/70',
+    alpha: 'text-neutral-600 hover:bg-neutral-100/50'
   }
 
   const sizeClasses = {
-    sm: 'px-2.5 py-1.5 text-sm font-light',
-    md: 'px-3 py-2 text-base font-light',
-    xl: 'px-3 py-2 gap-2 text-3xl font-normal',
+    sm: 'px-2.5 py-1.5 text-sm',
+    md: 'px-3 py-2 text-base',
+    lg: 'px-4 py-3 gap-2 text-base',
   }
 
   const iconClasses = {
-    sm: 'text-md',
+    sm: 'text-lg',
     md: 'text-lg',
-    xl: 'text-4xl'
+    lg: 'text-xl'
   }
 
   return (
     <button className={clsx(
+        className,
         baseClasses,
         variantClasses[variant],
-        sizeClasses[size],
-        className
+        sizeClasses[size]
       )}
       aria-label={ariaLabel}
       onClick={onClick}
