@@ -58,7 +58,7 @@ export function Navbar() {
           <div className="p-4 flex justify-between place-items-center">
             <Link href="/">
               <Image 
-                src="/img/logo.svg" 
+                src="/img/logo-dark.svg" 
                 alt="Finalia Logo" 
                 width={72}
                 height={24}

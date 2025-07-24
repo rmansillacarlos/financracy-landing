@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
+import "./globals.css"
 import localFont from 'next/font/local'
 import { Navbar } from "@/components/layout/Navbar"
-import "./globals.css"
+import Footer from "@/components/layout/Footer"
 
 const graphieFont = localFont({
   src: [
@@ -32,10 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${graphieFont.variable} antialiased`}
+        className={`${graphieFont.variable} antialiased pt-20`}
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
