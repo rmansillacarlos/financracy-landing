@@ -13,7 +13,7 @@ export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container?.current,
-        start: "start +=64",
+        start: "top +=64",
         end: "+=1800",
         pin: true,
         scrub: .1,
@@ -30,7 +30,8 @@ export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>
     }, "<")
 
     tl.to(videoEl, {
-      y: -240,
+      top: "50%",
+      yPercent: -50,
       x: !isMobile ? 420 : 0,
       opacity: !isMobile ? 1 : .15,
       scale: 1.5,
@@ -65,7 +66,7 @@ export const fadeUpAnimation = (container: React.RefObject<HTMLDivElement>, opti
     ease: "power2.out",
     scrollTrigger: {
         trigger: container.current,
-        start: "top 80%"
+        start: "top 75%"
       },
     ...options
   })
