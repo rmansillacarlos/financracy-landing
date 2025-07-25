@@ -1,5 +1,5 @@
 [
   { "href": "/", "label": "Inicio" },
   { "href": "/#benefits", "label": "Beneficios" },
-  { "href": "/#about", "label": "Nosotros" }
+  { "href": "/about", "label": "Nosotros" }
 ]
