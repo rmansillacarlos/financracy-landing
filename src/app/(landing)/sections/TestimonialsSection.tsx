@@ -1,21 +1,12 @@
+"use client"
+
+import { useRef } from "react"
+import { useGSAP } from "@gsap/react"
+import { fadeUpAnimation } from "@/animations/animations"
 import Icon from "@/components/ui/Icon"
-import TestimonialCard from "../components/TestimonialCard"
+import TestimonialCard from "@/app/(landing)/components/TestimonialCard"
 
 const testimonials = [
-  {
-    name: "Josefa González",
-    city: "Santiago",
-    country: "Chile",
-    rating: 5,
-    comment: "Finalia me ayudó a organizar mis finanzas de manera fácil y rápida. ¡La recomiendo totalmente!",
-  },
-  {
-    name: "Juan Pérez",
-    city: "Valparaíso",
-    country: "Chile",
-    rating: 4,
-    comment: "La app es muy intuitiva y el soporte es excelente. Ahora tengo más control sobre mi dinero.",
-  },
   {
     name: "Camila Rojas",
     city: "Concepción",
@@ -40,18 +31,25 @@ const testimonials = [
 ]
 
 export default function TestimonialsSection() {
+  const container = useRef<HTMLDivElement>(null!)
+
+  useGSAP(() => {
+    fadeUpAnimation(container, { y: 20, duration: 0.8 })
+  }, { scope: container })
+
   return (
-    <section className="mx-auto container py-32 place-items-center">
-      <div className="mb-16 w-fit flex gap-3 items-center text-center text-2xl font-bold">
-        <Icon icon="mdi:comment-text-outline" />
+    <section className="mx-auto container px-4 py-32 place-items-center md:px-0" ref={container}>
+      <div className="mb-12 w-fit flex gap-3 items-center text-center text-2xl font-bold fade-up-animation">
+        <Icon icon="mdi:comment-text-outline" className="hidden md:block" />
         +2 millones de personas en Chile confían en nosotros
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-7">
+      <div className="grid grid-cols-1 gap-4 justify-center lg:grid-cols-3 lg:gap-6">
         { testimonials.map((testimonial) => (
           <TestimonialCard
             key={testimonial.name}
             {...testimonial}
+            className="fade-up-animation"
           />
         )) }
       </div>

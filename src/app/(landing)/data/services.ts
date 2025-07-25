@@ -35,20 +35,20 @@ const services: Service[] = [
     href: "#",
     buttonText: "Abre tu cuenta"
   },
-  {
-    title: "Recarga tu celular",
-    description: "Recarga tu celular desde la app de forma rápida",
-    icon: "bi:phone",
-    href: "#",
-    buttonText: "Saber más"
-  },
-  {
-    title: "Transferencias",
-    description: "Realiza transferencias nacionales e internacionales.",
-    icon: "streamline-cyber:cash-hand-4",
-    href: "#",
-    buttonText: "Saber más"
-  },
+  // {
+  //   title: "Recarga tu celular",
+  //   description: "Recarga tu celular desde la app de forma rápida",
+  //   icon: "bi:phone",
+  //   href: "#",
+  //   buttonText: "Saber más"
+  // },
+  // {
+  //   title: "Transferencias",
+  //   description: "Realiza transferencias nacionales e internacionales.",
+  //   icon: "streamline-cyber:cash-hand-4",
+  //   href: "#",
+  //   buttonText: "Saber más"
+  // },
 ]
 
 export default services

@@ -19,13 +19,14 @@ export default function ServicesSection() {
   }, { scope: container })
 
   return (
-    <section className="container w-full py-16">
-      <div className="grid mb-10">
-        <span className="mb-8 mx-auto inline-flex gap-1 items-center px-2.5 py-1 text-center text-neutral-500 text-sm tracking-widest uppe bg-neutral-100 rounded-full">
+    <section id="services" className="p-4 container w-full py-16 md:p-0" ref={container}>
+      <div className="flex flex-col mb-10">
+        <span className="mb-12 mx-auto inline-flex gap-1 items-center px-2.5 py-1 text-center text-neutral-500 text-sm tracking-widest bg-neutral-100 rounded-full fade-up-animation">
           <Icon icon="material-symbols:check" className="text-lg" />
           Servicios
         </span>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6" ref={container}>
+
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           { services.map((service, index) => (
             <ServiceCard key={index} {...service} className="fade-up-animation" />
           )) }

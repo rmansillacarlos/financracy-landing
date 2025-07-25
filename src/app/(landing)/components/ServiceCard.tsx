@@ -18,12 +18,12 @@ export default function ServiceCard({ title, description, icon, href, buttonText
     <article 
       className={clsx(
         className,
-        "flex flex-col justify-between border border-neutral-200/60 shadow-lg rounded-xl p-6"
+        "flex flex-col justify-between bg-white border border-neutral-200/60 shadow-lg rounded-xl p-6"
       )}
       ref={ref}
     >
       <div>
-        <span className="flex items-center gap-3 mb-2">
+        <span className="flex items-center gap-2 mb-2">
           { icon && <Icon icon={icon} className="text-xl" /> }
           <b className="text-lg font-semibold">{title}</b>
         </span>

@@ -1,6 +1,6 @@
 import gsap from "gsap"
 
-export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>, container: React.RefObject<HTMLDivElement>) => {
+export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>, container?: React.RefObject<HTMLDivElement>) => {
   const videoEl = videoRef?.current
   if (!videoEl) return
 
@@ -8,16 +8,28 @@ export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>
     const duration = videoEl.duration
     if (!duration || isNaN(duration)) return
 
-    gsap.timeline().to(videoEl, {
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container?.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
+        start: "top top",
+        end: "bottom 20%",
+        pin: true,
+        scrub: 1,
+        // markers: true,
         onUpdate: (self) => {
           videoEl.currentTime = self.progress * duration
         }
       }
+    })
+
+    tl.to(videoEl, {
+      opacity: 0,
+      delay: 1.3,
+      scale: 1.1
+    })
+    tl.to(container?.current, {
+      opacity: 0,
+      delay: 1
     })
   }
 
@@ -33,7 +45,7 @@ export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>
 export const fadeUpAnimation = (container: React.RefObject<HTMLDivElement>, options: gsap.TweenVars = {}) => {
   gsap.from(".fade-up-animation", {
     opacity: 0,
-    y: 40,
+    y: 30,
     stagger: 0.15,
     duration: 0.8,
     ease: "power2.out",

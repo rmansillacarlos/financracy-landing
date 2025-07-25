@@ -109,6 +109,11 @@ export function Navbar() {
                 {label}
               </NavLink>
             )) }
+            <div>
+              <Button className="px-6">
+                Acceder
+              </Button>
+            </div>
           </ul>
         </nav>
       </div>

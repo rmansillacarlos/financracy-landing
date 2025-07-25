@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Icon from "@/components/ui/Icon"
+import clsx from "clsx"
 
 interface Props {
   name: string
@@ -7,12 +8,16 @@ interface Props {
   country: string
   rating: number
   comment: string
+  className?: string
 }
 
-export default function TestimonialCard({ name, city, country, rating, comment }: Props) {
+export default function TestimonialCard({ name, city, country, rating, comment, className }: Props) {
   return (
     <article
-      className="p-7 flex flex-col gap-4 rounded-2xl bg-neutral-800/50"
+      className={clsx(
+        className,
+        "p-7 flex flex-col gap-4 rounded-2xl bg-neutral-800/50"
+      )}
     >
       <div className="flex items-center gap-3">
         <Image

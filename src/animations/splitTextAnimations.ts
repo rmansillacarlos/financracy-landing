@@ -4,7 +4,7 @@ import { SplitText } from "gsap/all"
 interface Props {
   selectorClass?: string
   type?: "chars" | "words" | "lines"
-  options?: gsap.TweenVars | {}
+  options?: gsap.TweenVars
 }
 
 export const splitTextAnimation = ({selectorClass = '.split', type = 'words', options}: Props) => {
@@ -17,7 +17,7 @@ export const splitTextAnimation = ({selectorClass = '.split', type = 'words', op
     y: 20,
     opacity: 0,
     stagger: 0.1,
-    duration: 0.2,
+    duration: 0.3,
     ease: "back",
     ...options
   })
