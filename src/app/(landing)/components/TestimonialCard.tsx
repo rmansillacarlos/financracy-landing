@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Icon from "@/components/ui/Icon"
 import clsx from "clsx"
+import Card from "@/components/ui/Card"
 
 interface Props {
   name: string
@@ -13,7 +14,7 @@ interface Props {
 
 export default function TestimonialCard({ name, city, country, rating, comment, className }: Props) {
   return (
-    <article
+    <Card
       className={clsx(
         className,
         "p-7 flex flex-col gap-4 rounded-2xl bg-neutral-800/50"
@@ -38,6 +39,6 @@ export default function TestimonialCard({ name, city, country, rating, comment, 
         )) }
       </div>
       <p className="text-neutral-400">{comment}</p>
-    </article>
+    </Card>
   )
 }

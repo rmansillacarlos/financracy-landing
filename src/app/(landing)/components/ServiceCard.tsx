@@ -1,7 +1,8 @@
 import Link from "next/link"
+import clsx from "clsx"
 import Button from "@/components/ui/Button"
 import Icon from "@/components/ui/Icon"
-import clsx from "clsx"
+import Card from "@/components/ui/Card"
 
 interface Props {
   title: string
@@ -9,18 +10,17 @@ interface Props {
   icon?: string
   href?: string
   buttonText?: string
-  ref?: React.Ref<HTMLDivElement>
   className?: string
 }
 
-export default function ServiceCard({ title, description, icon, href, buttonText, ref, className }: Props) {
+export default function ServiceCard({ title, description, icon, href, buttonText, className }: Props) {
   return (
-    <article 
+    <Card
+      variant="light"
       className={clsx(
         className,
-        "flex flex-col justify-between bg-white border border-neutral-200/40 shadow-lg rounded-xl p-6"
+        "justify-between"
       )}
-      ref={ref}
     >
       <div>
         <span className="flex items-center gap-2 mb-2">
@@ -43,6 +43,6 @@ export default function ServiceCard({ title, description, icon, href, buttonText
           </Link>
         </div>
       ) }
-    </article>
+    </Card>
   )
 }
