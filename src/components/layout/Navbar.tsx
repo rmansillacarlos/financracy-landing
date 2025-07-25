@@ -73,12 +73,12 @@ export function Navbar() {
               )) }
             </ul>
             <div className="hidden md:gap-3 md:inline-flex">
-              <Link href="" target="_blank">
+              <Link href="">
                 <Button variant="alpha" size="sm">
                   Descarga la app
                 </Button>
               </Link>
-              <Link href="" target="_blank" className="hidden md:block">
+              <Link href="" className="hidden md:block">
                 <Button size="sm">
                   Acceder
                 </Button>
