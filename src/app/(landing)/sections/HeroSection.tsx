@@ -1,51 +1,38 @@
 "use client"
 
-import Button from "@/components/ui/Button"
+import { useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import { useRef } from "react"
+import Button from "@/components/ui/Button"
+import { videoScrollAnimation } from "@/animations/animations"
+import { splitTextAnimation } from "@/animations/splitTextAnimations"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export default function HeroSection() {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const container = useRef<HTMLDivElement>(null!)
+  const videoRef = useRef<HTMLVideoElement>(null!)
 
   useGSAP(() => {
-    const videoEl = videoRef.current
-    if (!videoEl) return
-
-    const tl = gsap.timeline()
-
-    const initScrollVideo = () => {
-      const duration = videoEl.duration
-      if (!duration || isNaN(duration)) return
-
-      tl.to(videoEl, {
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-          onUpdate: (self) => {
-            videoEl.currentTime = self.progress * duration
-          }
-        }
-      })
-    }
-
-    if (videoEl.readyState >= 1) {
-      initScrollVideo()
-    } else {
-      videoEl.addEventListener("loadedmetadata", initScrollVideo)
-    }
-  }, [])
+    splitTextAnimation({})
+    splitTextAnimation({ 
+      selectorClass: ".split-paragraph", 
+      type: "lines",
+      options: {
+        duration: .5,
+        y: 40,
+        ease: "ease.inOut", 
+      }
+    })
+    videoScrollAnimation(videoRef, container)
+  }, { scope: container })
 
   return (
     <section id="hero" className="container min-h-screen">
       <div className="mb-2 min-h-[40vh] flex flex-col items-center justify-end text-center gap-4">
-        <h1 className="max-w-[500px] text-5xl font-bold">Tu dinero, tu futuro. Cambia la forma.</h1>
-        <p className="max-w-[550px] text-lg mb-2">Cambia la forma de ver tu futuro con una mirada financiera. Disfruta de la seguridad y rapidez a la hora de administrar tu dinero.</p>
+        <h1 className="max-w-[500px] text-5xl font-bold split">Tu dinero, tu futuro. Cambia la forma.</h1>
+        <p className="max-w-[550px] text-lg mb-2 split-paragraph">Cambia la forma de ver tu futuro con una mirada financiera. Disfruta de la seguridad y rapidez a la hora de administrar tu dinero.</p>
         <Button 
           className="!rounded-full"
           size="lg"
@@ -54,7 +41,6 @@ export default function HeroSection() {
         </Button>
       </div>
       <video
-        id="hero-video"
         ref={videoRef}
         muted
         playsInline

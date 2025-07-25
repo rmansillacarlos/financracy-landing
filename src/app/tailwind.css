@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-/* Primary */
+  /* Primary */
   --color-primary-900: #00331E;
   --color-primary-800: #005733;
   --color-primary-700: #00804A;
@@ -36,4 +36,12 @@
   --color-neutral-200: #D0D0D0;
   --color-neutral-100: #E7E7E7;
   --color-neutral-50:  #EEEEEE;
+}
+
+@keyframes partners-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-partners-marquee {
+  animation: partners-marquee 25s linear infinite;
 }
