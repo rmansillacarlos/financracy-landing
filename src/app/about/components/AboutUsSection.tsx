@@ -11,7 +11,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const Paragraph = ({ id, children }: { id?: string, children: React.ReactNode }) => {
   return (
-    <p id={id} className="opacity-50 text-2xl text-white">{children}</p>
+    <p id={id} className="opacity-30 text-lg md:text-xl">{children}</p>
   )
 }
 
@@ -19,13 +19,13 @@ export default function AboutUsSection() {
   const container = useRef<HTMLDivElement>(null!)
   useGSAP(() => {
     const ENABLED_OPTIONS = { opacity: 1, duration: 2 }
-    const DISABLED_OPTIONS = { opacity: .5, duration: 2 }
+    const DISABLED_OPTIONS = { opacity: .4, duration: 2 }
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#about",
-        start: "center center",
-        end: "bottom",
+        start: "center 40%",
+        end: "max",
         pin: true,
         scrub: 1,
       }
@@ -39,20 +39,19 @@ export default function AboutUsSection() {
       .to("#p2", DISABLED_OPTIONS, "<")
 
     fadeUpAnimation(container)
-
   }, { scope: container })
 
   return (
     <div ref={container}>
-      <section id="hero" className="w-full py-32 flex flex-col items-center justify-center fade-up-animation">
-        <Image src="img/logo.svg" width={400} height={240} alt="Logo" />
-        <p className="mt-6 max-w-2xl text-4xl text-neutral-100 text-center">
+      <section id="hero" className="w-full px-6 py-32 flex flex-col items-center justify-center fade-up-animation">
+        <Image src="img/logo-light.svg" width={400} height={240} alt="Logo" />
+        <p className="mt-6 max-w-xl text-2xl text-neutral-600 text-center md:text-4xl">
           Somos Financracy, una fintech innovadora dedicada a transformar la experiencia financiera de las personas en Chile y en Latinoamérica.
         </p>
       </section>
 
       <section id="about" className="mx-auto container h-[60vh] px-4 flex flex-col justify-center items-center">
-        <h1 className="mb-4 text-5xl text-primary-400 font-extrabold text-center">Sobre nosotros</h1>
+        <h1 className="mb-4 text-5xl text-primary-500 font-extrabold text-center">Sobre nosotros</h1>
         <div className="max-w-3xl text-center space-y-6">
           <Paragraph id="p1">
             Pertenecemos al grupo Krealo, el corporate venture de Credicorp, lo que nos respalda con la solidez y experiencia de uno de los conglomerados financieros más importantes de la región.

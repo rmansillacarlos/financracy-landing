@@ -8,10 +8,10 @@ const FooterLink = ({ href, children }: { href: string, children: React.ReactNod
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-950/90 text-neutral-200 md:py-10">
-      <div className="container mx-auto p-8 flex flex-col-reverse justify-center gap-8 md:flex-row md:justify-between md:items-end">
+    <footer className="bg-neutral-950/90 p-8 text-neutral-200 md:p-10">
+      <div className="container mx-auto flex flex-col-reverse justify-center gap-8 md:flex-row md:justify-between md:items-end">
         <div className="flex flex-col">
-          <Image src="/img/logo.svg" alt="Financracy Logo" width={64} height={28} />
+          <Image src="/img/logo-dark.svg" alt="Financracy Logo" width={64} height={28} />
           <span className="mt-2 text-sm text-neutral-400">
             © {new Date().getFullYear()} Financracy. Todos los derechos reservados.
           </span>

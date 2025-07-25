@@ -4,8 +4,7 @@ import { useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import { fadeUpAnimation, videoScrollAnimation } from "@/animations/animations"
-import { splitTextAnimation } from "@/animations/splitTextAnimations"
+import { fadeUpAnimation, videoScrollAnimation, splitTextAnimation } from "@/animations/animations"
 import Button from "@/components/ui/Button"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
@@ -15,9 +14,13 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null!)
 
   useGSAP(() => {
-    splitTextAnimation({})
+    splitTextAnimation()
     fadeUpAnimation(container, { y: 20, duration: 1, delay: .2 })
-    videoScrollAnimation(videoRef, container)
+    const videoCleanup = videoScrollAnimation(videoRef, container)
+
+    return () => {
+      if (videoCleanup) videoCleanup()
+    }
   }, { scope: container })
 
   return (

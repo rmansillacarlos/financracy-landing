@@ -23,13 +23,11 @@ const graphieFont = localFont({
 export const metadata: Metadata = {
   title: "Financracy (Prueba)",
   description: "Estás a un paso de potenciar tus finanzas con Financracy.",
-};
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en">
       <body
@@ -40,5 +38,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  );
+  )
 }

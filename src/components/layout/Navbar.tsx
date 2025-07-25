@@ -17,9 +17,9 @@ export function Navbar() {
 
   const { isScrolled } = useUIStore()
 
-  const blurClasses = 'backdrop-blur-xl bg-black/30 shadow-xls shadow-neutral-300/20s duration-300 transition-all ease-in-out !mt-0'
+  const blurClasses = 'backdrop-blur-lg bg-white/80 duration-300 transition-all ease-in-out'
 
-  const containerDesktopClasses = 'mb-2 md:mt-2'
+  const containerDesktopClasses = ''
   const navDesktopClasses = 'mx-auto md:max-w-6xl'
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export function Navbar() {
             <div className="mr-28">
               <Link href="/" className="w-fit">
                 <Image 
-                  src="/img/logo-dark.svg" 
+                  src="/img/logo-light.svg" 
                   alt="Financracy Logo" 
                   width={72}
                   height={24}
@@ -77,7 +77,7 @@ export function Navbar() {
             </ul>
             <div className="hidden md:gap-3 md:inline-flex">
               <Link href="" target="_blank">
-                <Button variant="alpha" size="sm" className="!text-neutral-100">
+                <Button variant="alpha" size="sm">
                   Descarga la app
                 </Button>
               </Link>
