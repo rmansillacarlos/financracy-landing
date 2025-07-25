@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Financracy
+Bienvenido al landing page de Financracy, una app de gestión financiera
 
-## Getting Started
 
-First, run the development server:
+## Levantar app
+
+Instalar dependencias e iniciar dev server
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Design System
+Fuertemente basado en el DS solicitado, colores, tipografías, etc.  
+Opté por usar un fondo light por gusto personal.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tecnologías
 
-## Learn More
+### Stack
+App basada en **Next.js 15** (SSR), aprovechando la potencia del framework con **React.js**, optmizaciones SEO y pensando en escalabilidad a futuro.  
+La app maneja estados globales con **Zustand**, y está codeada con **Typescript** para mantener el código tipado y seguro.
 
-To learn more about Next.js, take a look at the following resources:
+### Animaciones
+Animaciones creadas con **GSAP** en su mayoría, incluído el scrubbing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Estilos
+Me incliné por **TailwindCSS** por su practicidad, su rápida implementación y personalización.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployada en Vercel
+Puedes ver la landing en acción [aquí](https://financracy.vercel.app/).
