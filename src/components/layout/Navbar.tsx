@@ -1,31 +1,26 @@
-'use client'
+"use client"
 
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { useScroll, useMotionValueEvent } from "motion/react"
 import clsx from "clsx"
 import navLinks from "@/lib/json/navLinks.json"
+import { useUIStore } from "@/stores/ui-store"
 import NavLink from "@/components/layout/NavLink"
 import Button from "@/components/ui/Button"
 import Icon from "@/components/ui/Icon"
 
 export function Navbar() {
   const pathname = usePathname()
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
-  const { scrollY } = useScroll()
+  const { isScrolled } = useUIStore()
 
-  const blurClasses = 'backdrop-blur-xl bg-white/80 shadow-xl shadow-neutral-300/20 duration-300 transition-all ease-in-out !mt-0'
-  const containerLgClasses = 'mb-2 md:mt-2'
-  const navLgClasses = 'md:max-w-6xl'
+  const blurClasses = 'backdrop-blur-xl bg-black/30 shadow-xls shadow-neutral-300/20s duration-300 transition-all ease-in-out !mt-0'
 
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    const isMobile = window.innerWidth <= 768
-    setScrolled(latest > (isMobile ? 1400 : 2000))
-  })
+  const containerDesktopClasses = 'mb-2 md:mt-2'
+  const navDesktopClasses = 'mx-auto md:max-w-6xl'
 
   useEffect(() => {
     const bodyClasses = document.body.classList
@@ -42,16 +37,11 @@ export function Navbar() {
       <div
         className={clsx(
           "fixed top-0 left-0 z-60 w-full overflow-hidden font-sans",
-          scrolled || open ? blurClasses : '',
-          containerLgClasses
+          isScrolled || open ? blurClasses : '',
+          containerDesktopClasses
         )}
       >
-        <nav 
-          className={clsx(
-            "mx-auto",
-            navLgClasses
-          )}
-        >
+        <nav className={navDesktopClasses}>
           <div className="p-4 flex justify-between place-items-center">
             <div className="mr-28">
               <Link href="/" className="w-fit">
@@ -87,7 +77,7 @@ export function Navbar() {
             </ul>
             <div className="hidden md:gap-3 md:inline-flex">
               <Link href="" target="_blank">
-                <Button variant="alpha" size="sm">
+                <Button variant="alpha" size="sm" className="!text-neutral-100">
                   Descarga la app
                 </Button>
               </Link>

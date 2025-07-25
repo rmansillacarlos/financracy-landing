@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${graphieFont.variable} font-sans antialiased mt-20`}
+        className={`${graphieFont.variable} font-sans antialiased`}
       >
         <Navbar />
         {children}
