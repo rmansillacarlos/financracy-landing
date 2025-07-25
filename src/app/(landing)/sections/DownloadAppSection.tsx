@@ -16,7 +16,7 @@ export default function DownlaodAppSection() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: "top 42%",
+        start: "top 38%",
         end: "bottom 20%",
         pin: true,
         scrub: .1,

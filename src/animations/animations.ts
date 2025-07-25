@@ -43,6 +43,7 @@ export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>
       delay: 2,
       duration: 1
     })
+
     tl.to(videoEl, {
       x: -200
     })
