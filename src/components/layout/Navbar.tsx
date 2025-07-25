@@ -18,8 +18,6 @@ export function Navbar() {
   const { isScrolled } = useUIStore()
 
   const blurClasses = 'backdrop-blur-lg bg-white/80 duration-300 transition-all ease-in-out'
-
-  const containerDesktopClasses = ''
   const navDesktopClasses = 'mx-auto md:max-w-6xl'
 
   useEffect(() => {
@@ -37,8 +35,7 @@ export function Navbar() {
       <div
         className={clsx(
           "fixed top-0 left-0 z-60 w-full overflow-hidden font-sans",
-          isScrolled || open ? blurClasses : '',
-          containerDesktopClasses
+          isScrolled || open ? blurClasses : ''
         )}
       >
         <nav className={navDesktopClasses}>

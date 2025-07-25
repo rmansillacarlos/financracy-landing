@@ -5,7 +5,6 @@ import { useUIEvents } from "@/hooks/useUIEvents"
 interface Props {
   thresholdMobile?: number
   thresholdDesktop?: number
-  isNavbarLightTheme?: boolean
 }
 
 export default function ScrollWatcher({

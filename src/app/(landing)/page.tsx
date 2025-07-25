@@ -8,7 +8,7 @@ import TestimonialsSection from "./sections/TestimonialsSection"
 export default function Home() {
   return (
     <main className="font-sans bg-white text-black pt-20 flex flex-col place-items-center justify-items-center gap-16">
-      <ScrollWatcher thresholdDesktop={2100} isNavbarLightTheme={true} />
+      <ScrollWatcher thresholdDesktop={2100} />
       <HeroSection />
       <DownlaodAppSection />
       <ServicesSection />
