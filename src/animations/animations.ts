@@ -15,7 +15,6 @@ export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>
         end: "bottom 20%",
         pin: true,
         scrub: 1,
-        // markers: true,
         onUpdate: (self) => {
           videoEl.currentTime = self.progress * duration
         }
