@@ -12,7 +12,6 @@ export default function Home() {
         <TestimonialsSection />
         <PartnersSection />
       </div>
-      {/* <CallToActionSection /> */}
     </main>
   );
 }
