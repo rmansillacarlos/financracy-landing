@@ -21,27 +21,29 @@ export default function HeroSection() {
   }, { scope: container })
 
   return (
-    <section id="hero" className="mx-auto p-4 container min-h-screen flex flex-col justify-center items-center md:p-0" ref={container}>
-      <div className="mb-2 min-h-[40vh]s flex flex-col items-center justify-end text-center gap-4">
-        <h1 className="max-w-[500px] text-5xl font-bold split">Tu dinero, tu futuro. Cambia la forma.</h1>
-        <p className="p-2 text-base mb-2 split-paragraph md:text-lg md:max-w-[640px] fade-up-animation">Cambia la forma de ver tu futuro con una mirada financiera. <br /> Disfruta de la seguridad y rapidez a la hora de administrar tu dinero.</p>
-        <Button 
-          className="!rounded-full"
-          size="lg"
-        >
-          Abre tu cuenta gratis
-        </Button>
-      </div>
+    <div className="" ref={container}>
+      <section className="mx-auto bottom-0 p-4 min-h-screen flex flex-col gap-6 justify-start items-center overflow-hidden md:p-0">
+        <div id="welcome" className="h-[58vh] container flex flex-col items-center justify-end text-center opacity-100 md:h-[38vh]">
+          <h1 className="max-w-[500px] text-5xl font-bold split">Tu dinero, tu futuro. Cambia la forma.</h1>
+          <p className="p-2 text-base mb-2 split-paragraph fade-up-animation md:text-lg md:max-w-[640px]">Cambia la forma de ver tu futuro con una mirada financiera. <br /> Disfruta de la seguridad y rapidez a la hora de administrar tu dinero.</p>
+          <Button 
+            className="!rounded-full"
+            size="lg"
+          >
+            Abre tu cuenta gratis
+          </Button>
+        </div>
+      </section>
 
       <video
         ref={videoRef}
         muted
         playsInline
         preload="auto"
-        className="mt-6 mx-auto w-[800px] h-auto object-cover opacity-100"
+        className="fixed mx-auto w-[940px] h-auto bottom-0 object-cover overflow-hidden -z-10 opacity-100 md:bottom-8"
       >
         <source src="/video/hero-phone.webm" type="video/mp4" />
       </video>
-    </section>
+    </div>
   )
 }

@@ -18,7 +18,7 @@ export default function ServiceCard({ title, description, icon, href, buttonText
     <article 
       className={clsx(
         className,
-        "flex flex-col justify-between bg-white border border-neutral-200/60 shadow-lg rounded-xl p-6"
+        "flex flex-col justify-between bg-white border border-neutral-200/40 shadow-lg rounded-xl p-6"
       )}
       ref={ref}
     >

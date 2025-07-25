@@ -35,7 +35,7 @@ export default function PartnersSection() {
   const container = useRef<HTMLDivElement>(null!)
 
   useGSAP(() => {
-    fadeUpAnimation(container, { y: 10 })
+    fadeUpAnimation(container, { y: 20 })
   }, { scope: container })
 
   return (
@@ -46,7 +46,7 @@ export default function PartnersSection() {
           Nuestros socios estratégicos
         </div>
 
-        <div className="relative max-w-screen overflow-hidden lg:max-w-[80vw]">
+        <div className="relative max-w-screen overflow-hidden lg:max-w-[80vw] fade-up-animation">
           <div className="absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-neutral-900 to-transparent pointer-events-none z-10 md:w-32" />
           <div className="absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-neutral-900 to-transparent pointer-events-none z-10 md:w-32" />
 

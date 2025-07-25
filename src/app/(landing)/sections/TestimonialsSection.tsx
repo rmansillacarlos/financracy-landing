@@ -38,7 +38,7 @@ export default function TestimonialsSection() {
   }, { scope: container })
 
   return (
-    <section className="mx-auto container px-4 py-32 place-items-center md:px-0" ref={container}>
+    <section className="mx-auto container px-4 py-32 place-items-center 2xl:px-0" ref={container}>
       <div className="mb-12 w-fit flex gap-3 items-center text-center text-2xl font-bold fade-up-animation">
         <Icon icon="mdi:comment-text-outline" className="hidden md:block" />
         +2 millones de personas en Chile confían en nosotros

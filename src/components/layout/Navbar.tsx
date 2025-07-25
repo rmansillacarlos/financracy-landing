@@ -24,7 +24,7 @@ export function Navbar() {
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const isMobile = window.innerWidth <= 768
-    setScrolled(latest > (isMobile ? 30 : 80))
+    setScrolled(latest > (isMobile ? 1400 : 2000))
   })
 
   useEffect(() => {
