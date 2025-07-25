@@ -21,8 +21,8 @@ const graphieFont = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Finalia (Prueba)",
-  description: "Estás a un paso de potenciar tus finanzas con Finalia.",
+  title: "Financracy (Prueba)",
+  description: "Estás a un paso de potenciar tus finanzas con Financracy.",
 };
 
 export default function RootLayout({

@@ -17,9 +17,9 @@ export default function Footer() {
     <footer className="bg-neutral-950/90 text-neutral-200 md:py-10">
       <div className="container mx-auto p-8 flex flex-col-reverse justify-center gap-8 md:flex-row md:justify-between md:items-end">
         <div className="flex flex-col">
-          <Image src="/img/logo.svg" alt="Finalia Logo" width={64} height={28} />
+          <Image src="/img/logo.svg" alt="Financracy Logo" width={64} height={28} />
           <span className="mt-2 text-sm text-neutral-400">
-            © {new Date().getFullYear()} Finalia. Todos los derechos reservados.
+            © {new Date().getFullYear()} Financracy. Todos los derechos reservados.
           </span>
         </div>
         <div className="flex flex-col gap-1 text-sm">

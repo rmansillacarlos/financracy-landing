@@ -59,7 +59,7 @@ export function Navbar() {
             <Link href="/">
               <Image 
                 src="/img/logo-dark.svg" 
-                alt="Finalia Logo" 
+                alt="Financracy Logo" 
                 width={72}
                 height={24}
                 className="h-6"

@@ -12,14 +12,14 @@ const testimonials = [
     city: "Concepción",
     country: "Chile",
     rating: 5,
-    comment: "Me encanta la seguridad y la rapidez de Finalia. Es justo lo que necesitaba para mi futuro financiero.",
+    comment: "Me encanta la seguridad y la rapidez de Financracy. Es justo lo que necesitaba para mi futuro financiero.",
   },
   {
     name: "Pedro Martínez",
     city: "Antofagasta",
     country: "Chile",
     rating: 4,
-    comment: "Finalia ha cambiado mi forma de ver el ahorro. Muy recomendable para quienes buscan tranquilidad financiera.",
+    comment: "Financracy ha cambiado mi forma de ver el ahorro. Muy recomendable para quienes buscan tranquilidad financiera.",
   },
   {
     name: "Carlos Ramírez",
