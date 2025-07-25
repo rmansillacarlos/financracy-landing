@@ -18,7 +18,7 @@ export function Navbar() {
 
   const { scrollY } = useScroll()
 
-  const blurClasses = 'backdrop-blur-xl bg-white/70 shadow-xl shadow-black-200/30 duration-300 transition-all ease-in-out !mt-0'
+  const blurClasses = 'backdrop-blur-xl bg-white/80 shadow-xl shadow-neutral-300/20 duration-300 transition-all ease-in-out !mt-0'
   const containerLgClasses = 'mb-2 md:mt-2'
   const navLgClasses = 'md:max-w-6xl'
 
@@ -29,11 +29,8 @@ export function Navbar() {
 
   useEffect(() => {
     const bodyClasses = document.body.classList
-    if (open) {
-      bodyClasses.add('overflow-hidden')
-    } else {
-      bodyClasses.remove('overflow-hidden')
-    }
+    if (open) bodyClasses.add('overflow-hidden')
+    else bodyClasses.remove('overflow-hidden')
 
     return () => {
       bodyClasses.remove('overflow-hidden')
@@ -56,15 +53,17 @@ export function Navbar() {
           )}
         >
           <div className="p-4 flex justify-between place-items-center">
-            <Link href="/">
-              <Image 
-                src="/img/logo-dark.svg" 
-                alt="Financracy Logo" 
-                width={72}
-                height={24}
-                className="h-6"
-              />
-            </Link>
+            <div className="mr-28">
+              <Link href="/" className="w-fit">
+                <Image 
+                  src="/img/logo-dark.svg" 
+                  alt="Financracy Logo" 
+                  width={72}
+                  height={24}
+                  className="h-6"
+                />
+              </Link>
+            </div>
             <Button 
               variant="alpha"
               className="!p-0.5 md:hidden" 
@@ -74,7 +73,7 @@ export function Navbar() {
             </Button>
             {/* Desktop NavItems */}
             <ul 
-              className="hidden md:flex md:gap-10"
+              className="hidden md:flex md:gap-8"
             >
               { navLinks.map(({ href, label }) => (
                 <NavLink
@@ -86,11 +85,18 @@ export function Navbar() {
                 </NavLink>
               )) }
             </ul>
-            <Link href="" target="_blank" className="hidden md:block">
-              <Button size="sm">
-                Acceder
-              </Button>
-            </Link>
+            <div className="hidden md:gap-3 md:inline-flex">
+              <Link href="" target="_blank">
+                <Button variant="alpha" size="sm">
+                  Descarga la app
+                </Button>
+              </Link>
+              <Link href="" target="_blank" className="hidden md:block">
+                <Button size="sm">
+                  Acceder
+                </Button>
+              </Link>
+            </div>
           </div>
           {/* Mobile NavItems */}
           <ul 
@@ -109,8 +115,11 @@ export function Navbar() {
                 {label}
               </NavLink>
             )) }
-            <div>
-              <Button className="px-6">
+            <div className="pt-2 flex flex-col gap-3 border-t border-neutral-100">
+              <Button variant="alpha" size="sm">
+                Descarga la app
+              </Button>
+              <Button className="w-fit">
                 Acceder
               </Button>
             </div>
