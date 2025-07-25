@@ -27,10 +27,12 @@ export const videoScrollAnimation = (videoRef: React.RefObject<HTMLVideoElement>
       delay: 1.3,
       scale: 1.1
     })
-    tl.to(container?.current, {
-      opacity: 0,
-      delay: 1
-    })
+
+    if (container)
+      tl.to(container?.current, {
+        opacity: 0,
+        delay: 1
+      })
   }
 
   if (videoEl.readyState >= 1) { 
