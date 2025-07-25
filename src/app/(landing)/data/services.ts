@@ -2,7 +2,7 @@ interface Service {
   title: string
   description: string
   icon?: string
-  href?: string
+  href: string
   buttonText?: string
 }
 
@@ -45,9 +45,30 @@ const services: Service[] = [
   {
     title: "Transferencias",
     description: "Realiza transferencias nacionales e internacionales.",
-    icon: "streamline-cyber:cash-hand-4",
+    icon: "streamline:subscription-cashflow",
     href: "#",
     buttonText: "Saber más"
+  },
+  {
+    title: "3 cuotas sin interés",
+    description: "Paga en hasta 3 cuotas sin interés usando tu tarjeta de crédito Financracy.",
+    icon: "mdi:credit-card-multiple-outline",
+    href: "#",
+    buttonText: "Ver comercios"
+  },
+  {
+    title: "Hasta 30% dcto. en viajes",
+    description: "Descuentos exclusivos en pasajes de bus, avión y alojamientos pagando con tu tarjeta Financracy.",
+    icon: "mingcute:airplane-line",
+    href: "#",
+    buttonText: "Ver beneficios"
+  },
+  {
+    title: "Hasta 50% dcto. en comida",
+    description: "Disfruta de promociones y descuentos en restaurantes y delivery asociados.",
+    icon: "mdi:food-outline",
+    href: "#",
+    buttonText: "Ver promociones"
   },
 ]
 

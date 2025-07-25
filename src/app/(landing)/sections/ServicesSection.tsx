@@ -19,11 +19,11 @@ export default function ServicesSection() {
   }, { scope: container })
 
   return (
-    <section id="services" className="p-4 container w-full py-16 md:p-8 4xl:p-0" ref={container}>
+    <section id="benefits" className="px-4 container w-full py-32 md:px-8 4xl:px-0" ref={container}>
       <div className="flex flex-col mb-10">
         <span className="mb-12 mx-auto inline-flex gap-1 items-center px-2.5 py-1 text-center text-neutral-500 text-sm tracking-widest bg-neutral-100 rounded-full fade-up-animation">
           <Icon icon="material-symbols:check" className="text-lg" />
-          Servicios
+          Productos y beneficios
         </span>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
